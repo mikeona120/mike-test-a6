@@ -108,10 +108,3 @@ if ( start > 0 && isActive) {
   // alert(start + " " + end);
   
 }, 1000);*/
-
-function dragbuttons(){
-  $('.button').draggable();
-}
-
-
-
