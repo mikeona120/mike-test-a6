@@ -109,25 +109,50 @@ if ( start > 0 && isActive) {
   
 }, 1000);*/
 
+//Scrolling for Soundscape
 $(function(){
   var curDown = false,
       curYPos = 0,
       curXPos = 0;
-  $('.soundscroll').mousemove(function(m){
+  $('#scroll1').mousemove(function(m){
     if(curDown === true){
-     //$('.soundscroll').scrollTop($('.soundscroll').scrollTop() + (curYPos - m.pageY)); 
-     $('.soundscroll').scrollLeft($('.soundscroll').scrollLeft() + (curXPos - m.pageX));
+     //$('#scroll1').scrollTop($('#scroll1').scrollTop() + (curYPos - m.pageY)); 
+     $('#scroll1').scrollLeft($('#scroll1').scrollLeft() + (curXPos - m.pageX));
 
     }
   });
   
-  $('.soundscroll').mousedown(function(m){
+  $('#scroll1').mousedown(function(m){
     curDown = true;
     curYPos = m.pageY;
     curXPos = m.pageX;
   });
   
-  $('.soundscroll').mouseup(function(){
+  $('#scroll1').mouseup(function(){
+    curDown = false;
+  });
+})
+
+//Scrolling for Alert sound
+$(function(){
+  var curDown = false,
+      curYPos = 0,
+      curXPos = 0;
+  $('#scroll2').mousemove(function(m){
+    if(curDown === true){
+     //$('#scroll2').scrollTop($('#scroll2').scrollTop() + (curYPos - m.pageY)); 
+     $('#scroll2').scrollLeft($('#scroll2').scrollLeft() + (curXPos - m.pageX));
+
+    }
+  });
+  
+  $('#scroll2').mousedown(function(m){
+    curDown = true;
+    curYPos = m.pageY;
+    curXPos = m.pageX;
+  });
+  
+  $('#scroll2').mouseup(function(){
     curDown = false;
   });
 })

@@ -74,8 +74,8 @@ html {
   display:block;
   top:0;
   left:0;
-  width:400px;
-  max-height:auto;
+/*  width:400px;
+*/  max-height:auto;
   margin:0;
   background: #d3d3d3;
   overflow-y:hidden;
