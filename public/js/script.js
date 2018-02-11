@@ -113,21 +113,21 @@ $(function(){
   var curDown = false,
       curYPos = 0,
       curXPos = 0;
-  $('.Soundscape').mousemove(function(m){
+  $('.soundscroll').mousemove(function(m){
     if(curDown === true){
-     //$('.Soundscape').scrollTop($('.Soundscape').scrollTop() + (curYPos - m.pageY)); 
-     $('.Soundscape').scrollLeft($('.Soundscape').scrollLeft() + (curXPos - m.pageX));
+     //$('.soundscroll').scrollTop($('.soundscroll').scrollTop() + (curYPos - m.pageY)); 
+     $('.soundscroll').scrollLeft($('.soundscroll').scrollLeft() + (curXPos - m.pageX));
 
     }
   });
   
-  $('.Soundscape').mousedown(function(m){
+  $('.soundscroll').mousedown(function(m){
     curDown = true;
     curYPos = m.pageY;
     curXPos = m.pageX;
   });
   
-  $('.Soundscape').mouseup(function(){
+  $('.soundscroll').mouseup(function(){
     curDown = false;
   });
 })
