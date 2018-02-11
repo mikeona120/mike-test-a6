@@ -1,5 +1,7 @@
 ::-webkit-scrollbar{width:2px;height:2px;}
 ::-webkit-scrollbar-
+
+
 button{width:2px;height:2px;}
 
 button {
@@ -72,29 +74,36 @@ html {
   display:block;
   top:0;
   left:0;
-  width:100px;
-  max-height:400px;
+  width:400px;
+  max-height:auto;
   margin:0;
-  background:#abc;
-  overflow-y:auto;
-  overflow-x:hidden;
-  transform:rotate(-90deg) translateY(-280px);
-  transform-origin:right top;
+  background: #d3d3d3;
+  overflow-y:hidden;
+  overflow-x:scroll;
+  white-space: nowrap;
+
+  /*transform:rotate(-90deg) translateY(-280px);
+  transform-origin:right top;*/
+
 }
 .Soundscape > button{
-  display:block;
+  display:inline-block;
   /*padding:5px;*/
  /* background:#cab;*/
-  transform:rotate(90deg);
-  transform-origin: right top;
+ /* transform:rotate(90deg);
+  transform-origin: right top;*/
+
 }
 
 .squares{
-  padding:60px 0 0 0;
+  width:500px;
 }
 
 .squares > button{
-  width:60px;
-  height:60px;
+  width:100px;
+  height:100px;
   margin:10px;
+
 }
+
+

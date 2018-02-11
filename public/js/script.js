@@ -108,3 +108,26 @@ if ( start > 0 && isActive) {
   // alert(start + " " + end);
   
 }, 1000);*/
+
+$(function(){
+  var curDown = false,
+      curYPos = 0,
+      curXPos = 0;
+  $('.Soundscape').mousemove(function(m){
+    if(curDown === true){
+     //$('.Soundscape').scrollTop($('.Soundscape').scrollTop() + (curYPos - m.pageY)); 
+     $('.Soundscape').scrollLeft($('.Soundscape').scrollLeft() + (curXPos - m.pageX));
+
+    }
+  });
+  
+  $('.Soundscape').mousedown(function(m){
+    curDown = true;
+    curYPos = m.pageY;
+    curXPos = m.pageX;
+  });
+  
+  $('.Soundscape').mouseup(function(){
+    curDown = false;
+  });
+})
