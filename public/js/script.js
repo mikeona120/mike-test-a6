@@ -114,11 +114,13 @@ $(function(){
   var curDown = false,
       curYPos = 0,
       curXPos = 0;
+
   $('#scroll1').mousemove(function(m){
     if(curDown === true){
      //$('#scroll1').scrollTop($('#scroll1').scrollTop() + (curYPos - m.pageY)); 
      $('#scroll1').scrollLeft($('#scroll1').scrollLeft() + (curXPos - m.pageX));
-
+     curYPos = m.pageY;
+     curXPos = m.pageX;
     }
   });
   
@@ -131,6 +133,8 @@ $(function(){
   $('#scroll1').mouseup(function(){
     curDown = false;
   });
+
+
 })
 
 //Scrolling for Alert sound
@@ -142,6 +146,8 @@ $(function(){
     if(curDown === true){
      //$('#scroll2').scrollTop($('#scroll2').scrollTop() + (curYPos - m.pageY)); 
      $('#scroll2').scrollLeft($('#scroll2').scrollLeft() + (curXPos - m.pageX));
+     curYPos = m.pageY;
+     curXPos = m.pageX;
 
     }
   });
