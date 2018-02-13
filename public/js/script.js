@@ -396,21 +396,13 @@ function checkTimeDigit(time) {
 //Scrolling for Soundscape
 $(function(){
   var isDown = false, currentX = 0, currentY = 0;
-  var isTouchDevice = function() {  
-    return 'ontouchstart' in window || 'onmsgesturechange' in window; 
-    };
-
-    var isDesktop = window.screenX != 0 && !isTouchDevice() ? true : false;
 
   $('#scroll1').mousemove(function(event){
     if(isDown === true){
      //$('#scroll1').scrollTop($('#scroll1').scrollTop() + (currentY - event.pageY)); 
      $('#scroll1').scrollLeft($('#scroll1').scrollLeft() + (currentX - event.pageX));
-     if(isDesktop){
-      currentY = event.pageY;
+     currentY = event.pageY;
      currentX = event.pageX;
-     }
-     
     }
   });
   
@@ -434,6 +426,8 @@ $(function(){
     if(isDown === true){
      //$('#scroll2').scrollTop($('#scroll2').scrollTop() + (currentY - event.pageY)); 
      $('#scroll2').scrollLeft($('#scroll2').scrollLeft() + (currentX - event.pageX));
+     currentY = event.pageY;
+     currentX = event.pageX;
     }
   });
   
