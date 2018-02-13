@@ -20,63 +20,51 @@
 				<br><br>
 				<h4>Soundscape</h4>
 
-				<div class="soundscroll squares" id = "scroll1">
+				<div class="soundscroll squares" id="scroll1">
 				<button class="button" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-    			<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-    			<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-    			<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
-    			<button class="button" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-    			<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-    			<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-    			<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
-    			<button class="button" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-    			<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-    			<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-    			<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
-    			<button class="button" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-    			<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-    			<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-    			<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
-    			</div>
-
-				<br><br>
-				<h4>Alert Sound</h4>
-
-				<div class="soundscroll squares" id = "scroll2">
-				<button class="button" onclick="soundEffect(5)" id="sound5">Foghorn</button>
-    			<button class="button" onclick="soundEffect(6)" id="sound6">Beeping</button>
-   				<button class="button" onclick="soundEffect(7)" id="sound7">Siren</button>
-    			<button class="button" onclick="soundEffect(8)" id="sound8">Bells</button>
-    			<button class="button" onclick="soundEffect(5)" id="sound5">Foghorn</button>
-    			<button class="button" onclick="soundEffect(6)" id="sound6">Beeping</button>
-   				<button class="button" onclick="soundEffect(7)" id="sound7">Siren</button>
-    			<button class="button" onclick="soundEffect(8)" id="sound8">Bells</button>
-    			</div>
-
-    			<br><br>
-    			<div id="div1">No soundeffect selected yet...</div>
-
-				<br><br><br><br>
-				<output id="downtime" for="downtimeRange">20</output>
-				<br><br>
-				<div class="slidecontainer">
-					<input type="range" min="1" max="40" value="20" class="slider" id="downtimeRange" oninput="downtime.value = downtimeRange.value">
+				<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
+				<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
+				<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
 				</div>
 
 				<br><br>
+				<h4>Alert Sound</h4>
+				<div class="soundscroll squares" id="scroll2">
+				<button class="button" onclick="soundEffect(5)" id="sound5">Foghorn</button>
+				<button class="button" onclick="soundEffect(6)" id="sound6">Beeping</button>
+				<button class="button" onclick="soundEffect(7)" id="sound7">Siren</button>
+				<button class="button" onclick="soundEffect(8)" id="sound8">Bells</button>
+				</div>
+
+				<br><br>
+				<div id="div1">No sound effect selected yet...</div>
+
+				<br><br>
+				<!-- Downtime slider 
+				<output id="downtime" for="downtimeRange">20</output><br><br>
+				<div class="slidecontainer">
+					<input type="range" min="1" max="40" value="20" class="slider" id="downtimeRange" oninput="downtime.value = downtimeRange.value">
+				</div> <br><br>-->
+
+				<p class="downtime-text">Allowed Downtime: <span id="downtime">20</span> minutes</p>
+				<br>
+				<div class="slidecontainer">
+					<input type="range" min="1" max="40" value="20" class="slider" id="downtimeRange" oninput="updateTimeRange(this.value)">
+				</div>
+				<br><br>
+				<!-- Start working -->
 				<div class="button" id="start">
 					<a href="screen2" class="thumbnail">
 						<p>Start Working!</p>
 					</a>
 				</div>
-
-
 			</center>
 		</div>
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/script.js"></script>
+
 
 	</body>
 	</html>

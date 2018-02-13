@@ -1,36 +1,52 @@
-::-webkit-scrollbar{width:2px;height:2px;}
-::-webkit-scrollbar-
-
-
-button{width:2px;height:2px;}
-
 button {
-    background-color: #eee;
-
+    background-color: #00BCD4;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .button {
     width: 20%;
     background-color: #eee;
-    padding: 1px;
-    margin-top: 15px;
-
+    padding: 10px;
+    margin-top: 12px;
+    background-color: #00BCD4;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 html {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-
-
-#downtime:before {
-  content: "Allowed Downtime: ";
-  font-weight: bold;
-  font-size: 100%;
+h4 {
+  font-size: 140%;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-#downtime:after {
-    content: " minutes"
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#productivityTracker {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.productivity {
+  width: 20%; 
+  background-color: lightblue; 
+  float:left;
+}
+
+.offtask {
+  width: 20%;
+  background-color: red; 
+  float:right;
+}
+
+
+.downtime-text {
+  font-weight: bold;
+  font-size: 100%;
 }
 
 #volume:before {
@@ -70,29 +86,19 @@ html {
 }
 
 .soundscroll{
- /*position:relative;*/
   display:block;
   top:0;
   left:0;
-/*  width:400px;
-*/  max-height:auto;
+  max-height:auto;
   margin:0;
   background: #d3d3d3;
   overflow-y:hidden;
-  overflow-x:scroll;
+  overflow-x:hidden;
   white-space: nowrap;
-
-  /*transform:rotate(-90deg) translateY(-280px);
-  transform-origin:right top;*/
-
+  -webkit-overflow-scrolling: touch;
 }
 .soundscroll > button{
   display:inline-block;
-  /*padding:5px;*/
- /* background:#cab;*/
- /* transform:rotate(90deg);
-  transform-origin: right top;*/
-
 }
 
 .squares{
@@ -103,7 +109,4 @@ html {
   width:100px;
   height:100px;
   margin:10px;
-
 }
-
-
