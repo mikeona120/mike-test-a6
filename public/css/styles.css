@@ -93,7 +93,7 @@ h1 {
   margin:0;
   background: #d3d3d3;
   overflow-y:hidden;
-  overflow-x:auto;
+  overflow-x:hidden;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
