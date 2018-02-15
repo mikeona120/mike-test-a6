@@ -21,19 +21,17 @@
 				<h4>Soundscape</h4>
 
 				<div class="soundscroll squares" id="scroll1">
-				<button class="button" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-				<button class="button" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-				<button class="button" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-				<button class="button" onclick="soundEffect(4)" id="sound4">White Noise</button>
+				{{#each soundscapes}} 
+				<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+				{{/each}}
 				</div>
 
 				<br><br>
 				<h4>Alert Sound</h4>
 				<div class="soundscroll squares" id="scroll2">
-				<button class="button" onclick="soundEffect(5)" id="sound5">Foghorn</button>
-				<button class="button" onclick="soundEffect(6)" id="sound6">Beeping</button>
-				<button class="button" onclick="soundEffect(7)" id="sound7">Siren</button>
-				<button class="button" onclick="soundEffect(8)" id="sound8">Bells</button>
+				{{#each alerts}} 
+				<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+				{{/each}}
 				</div>
 
 				<br><br>

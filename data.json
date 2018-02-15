@@ -1,0 +1,46 @@
+{
+  "soundscapes": [
+  {
+    "id": "sound1",
+    "name": "Falling Rain",
+    "soundEffectnum": 1
+  },
+  {
+    "id": "sound2",
+    "name": "Forest Morning",
+    "soundEffectnum": 2
+  },
+  {
+    "id": "sound3",
+    "name": "Burning Logs",
+    "soundEffectnum": 3
+  },
+  {
+    "id": "sound4",
+    "name": "White Noise",
+    "soundEffectnum": 4
+  }
+],
+  "alerts": [
+  {
+    "id": "sound5",
+    "name": "Foghorn",
+    "soundEffectnum": 5
+  },
+  {
+    "id": "sound6",
+    "name": "Beeping",
+    "soundEffectnum": 6
+  },
+  {
+    "id": "sound7",
+    "name": "Siren",
+    "soundEffectnum": 7
+  },
+  {
+    "id": "sound8",
+    "name": "Bells",
+    "soundEffectnum": 8
+  }
+]
+}

@@ -2,6 +2,7 @@ button {
     background-color: #00BCD4;
     color: #fff;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 140%;
 }
 
 .button {
@@ -57,7 +58,7 @@ h1 {
 
 .slider {
     -webkit-appearance: none;
-    width: 50%;
+    width: 370px;
     height: 15px;
     border-radius: 5px;   
     background: #d3d3d3;
@@ -96,14 +97,8 @@ h1 {
   overflow-x:hidden;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  line-width: 15px;
 }
-
-@media screen and (max-width: 500px) {
-    .soundscroll{ 
-      overflow-x:auto;
-    }
-}
-
 .soundscroll > button{
   display:inline-block;
 }
@@ -113,8 +108,8 @@ h1 {
 }
 
 .squares > button{
-  width:100px;
+  width:170px;
   height:100px;
   margin:10px;
-}
 
+}

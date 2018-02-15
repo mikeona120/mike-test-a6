@@ -26,11 +26,10 @@
 			
 			<h4>Alert Sound</h4>
 			<div class="soundscroll squares" id="scroll2">
-			<button class="button" onclick="soundEffect(5)" id="sound5">Foghorn</button>
-    		<button class="button" onclick="soundEffect(6)" id="sound6">Beeping</button>
-   			<button class="button" onclick="soundEffect(7)" id="sound7">Siren</button>
-    		<button class="button" onclick="soundEffect(8)" id="sound8">Bells</button>
-    		</div>
+			{{#each alerts}} 
+			<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+			{{/each}}
+			</div>
 
     		<!-- add save button: on save, updateTimeRange() -->
 			<br><br><br><br>

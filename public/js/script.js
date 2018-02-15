@@ -110,7 +110,7 @@ function fakeLogin(){
 	var user = document.getElementById('username').value;
 	var pass = document.getElementById('password').value;
 	if(user == "user" && pass == "pass"){
-		window.location = "/";
+		window.location = "/home";
 	}
 	else{
 		alert("Incorrect username/password");
@@ -428,6 +428,7 @@ $(function(){
      $('#scroll2').scrollLeft($('#scroll2').scrollLeft() + (currentX - event.pageX));
      currentY = event.pageY;
      currentX = event.pageX;
+
     }
   });
   

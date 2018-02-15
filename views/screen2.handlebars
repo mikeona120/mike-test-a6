@@ -45,10 +45,9 @@
 		<h4>Soundscape</h4>
 
       	<div class="soundscroll squares" id="scroll1">
-		<button type="button" class="button btn btn-primary" onclick="soundEffect(1)" id="sound1">Falling Rain</button>
-    	<button type="button" class="button btn btn-primary" onclick="soundEffect(2)" id="sound2">Forest Morning</button>
-    	<button type="button" class="button btn btn-primary" onclick="soundEffect(3)" id="sound3">Burning Logs</button>
-    	<button type="button" class="button btn btn-primary" onclick="soundEffect(4)" id="sound4">White Noise</button>
+		{{#each soundscapes}} 
+		<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+		{{/each}}
 		</div>
 		
 	<br><br>
