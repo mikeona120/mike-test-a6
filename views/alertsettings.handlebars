@@ -5,34 +5,32 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	
 </head>
 <body>
 	<div class="container">
 		<center>
-			<div class="jumbotron">
-				<h1>Settings</h1>
+
+
+			<div class="row mt-5">
+				<div class="col-sm-4"><a href="screen2" class="btn btn-outline-primary" role="button" aria-pressed="true">Back</a></div>
+				<div class="col-sm-4"><h1>Settings</h1></div>
+				<div class="col-sm-4"><button type="button" class="btn btn-outline-info" onclick="helpSettings()">?</button></div>
 			</div>
 
-			<button type="button" onclick="helpSettings()">?</button>
 
-			<div class="button" id="back">
-				<a href="screen2" class="thumbnail">
-					<p>Back</p>
-				</a>
-			</div>
-			
-			<h4>Alert Sound</h4>
+			<h4 class="mt-5">Alert Sound</h4>
 			<div class="soundscroll squares" id="scroll2">
-			{{#each alerts}} 
-			<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
-			{{/each}}
+				{{#each alerts}} 
+				<button class="btn btn-outline-secondary alarm" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+				{{/each}}
 			</div>
 
-    		<!-- add save button: on save, updateTimeRange() -->
-			<br><br><br><br>
+			<!-- add save button: on save, updateTimeRange() -->
+			<br><br>
 			<output id="downtime" for="downtimeRange">20</output>
 			<br><br>
 			<div class="slidecontainer">
@@ -40,7 +38,7 @@
 			</div>
 
 
-			<br><br><br><br>
+			<br><br><br>
 			<output id="volume" for="alertVolume">100</output>
 			<br><br>
 			<div class="slidecontainer">
@@ -51,10 +49,20 @@
 			
 		</center>
 	</div>
+	<footer class="mt-5">
+		<div class="row">
+			<div class="col-sm-12">
+				© 2018 Copyright: Soundsters
+			</div>
+		</div>
+	</footer>
 
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-<script src="/js/script.js"></script>
+	<script src="/js/script.js"></script>
 
 
 </body>

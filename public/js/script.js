@@ -105,46 +105,36 @@ function checkDowntime() {
   }
 }*/
 
-//Simulate login
-function fakeLogin(){
-	var user = document.getElementById('username').value;
-	var pass = document.getElementById('password').value;
-	if(user == "user" && pass == "pass"){
-		window.location = "/home";
-	}
-	else{
-		alert("Incorrect username/password");
-	}
-}
-
 var timerCountdown;
 var pTimerCountdown;
+  sessionStorage.setItem("downtimeVal", 20);
+  sessionStorage.setItem("downtimeValSecs", "00");
 
 function startTimer() { // Jackie's countdown
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = parseInt(timeArray[0]);
-  var s = parseInt(timeArray[1]);
+var presentTime = document.getElementById('timer').innerHTML;
+var timeArray = presentTime.split(/[:]+/);
+var m = parseInt(timeArray[0]);
+var s = parseInt(timeArray[1]);
 
-  if(s == 0 && m > 0) { 
-    m = m - 1;
-    s = 59;
-  } 
-  else if(s > 0){
-    s -= 1;
-  }
+if(s == 0 && m > 0) { 
+  m = m - 1;
+  s = 59;
+} 
+else if(s > 0){
+  s -= 1;
+}
 
-  if (m == 0 && s == 0) {
-    printTime(m, s, 'timer');
-	playSavedAlarm();
-	clearTimeout(timerCountdown);
-	
-  } else {
-    printTime(m, s, 'timer'); 
-    timerCountdown = setTimeout(startTimer, 1000);
-  }
-  sessionStorage.setItem("downtimeVal", m);
-  sessionStorage.setItem("downtimeValSecs", s);
+if (m == 0 && s == 0) {
+  printTime(m, s, 'timer');
+  playSavedAlarm();
+  clearTimeout(timerCountdown);
+
+} else {
+  printTime(m, s, 'timer'); 
+  timerCountdown = setTimeout(startTimer, 1000);
+}
+sessionStorage.setItem("downtimeVal", m);
+sessionStorage.setItem("downtimeValSecs", s);
 }
 
 var pTime = document.getElementById('productiveTime');
@@ -167,19 +157,18 @@ function startPTimer() {
   // Saves the productive time
   // TODO: fix so value is gotten from storage before the first time it is saved 
   if(s > 1){
-	//console.log("saved m " + m);
-	//console.log("saved s " + s);
 	sessionStorage.setItem("pTimeVal", m);
 	sessionStorage.setItem("pTimeValSecs", s);
-  }
-  printTime(m, s, 'productiveTime'); 
-  pTimerCountdown = setTimeout(startPTimer, 1000);
+}
+printTime(m, s, 'productiveTime'); 
+pTimerCountdown = setTimeout(startPTimer, 1000);
 }
 
 
 // countdown timer
 var timer = document.getElementById('timer');
 
+// links downtime slider to downtime timer
 function updateTimeRange(val) {
   document.getElementById("downtime").innerHTML = val;
   sessionStorage.setItem("downtimeVal", val);
@@ -192,14 +181,12 @@ if(timer != null){
 if(pTime != null){
   var storedPTimeVal = sessionStorage.getItem("pTimeVal");
   var storedPTimeValSecs = sessionStorage.getItem("pTimeValSecs");
-  //console.log("got m " + storedPTimeVal);
-  //console.log("got s " + storedPTimeValSecs);
   if(storedPTimeVal != null && storedPTimeValSecs != null){
-	printTime(storedPTimeVal, storedPTimeValSecs, 'productiveTime');
-  }
-  else{
-	pTime.innerHTML = "00:00"
-  }
+   printTime(storedPTimeVal, storedPTimeValSecs, 'productiveTime');
+ }
+ else{
+   pTime.innerHTML = "00:00"
+ }
 }
 
 function printTime(m, s, element) {
@@ -214,7 +201,7 @@ function checkTimeDigit(time) {
 
     //------- CHECK ACTIVE/INACTIVE -------//
 
-	var isActive;
+    var isActive;
     // set isActive status
     window.onfocus = function () { 
       isActive = true; 
@@ -230,8 +217,8 @@ function checkTimeDigit(time) {
     if ( isActive == false ) {
       start = Date.now();
       //alert("Productivity paused");
-	  clearTimeout(pTimerCountdown);
-	  startTimer();
+      clearTimeout(pTimerCountdown);
+      startTimer();
       checkEnd = setInterval(onPage, 1000);
       clearInterval(checkPage);
     } 
@@ -241,15 +228,14 @@ function checkTimeDigit(time) {
   onPage = function () { 
     if ( start > 0 && isActive) {
       end = Date.now();
-	  clearTimeout(timerCountdown);
-	  startPTimer();
+      clearTimeout(timerCountdown);
+      startPTimer();
     elapsed = (end - start) / 1000; // number of seconds away from tab
     elapsedMinutes = Math.floor(elapsed / 60);
     elapsedSeconds = Math.floor(elapsed % 60);
     // alert("Welcome back! You spent " + elapsedMinutes + " minutes and " + elapsedSeconds + " seconds off-task!");
-	
-    
-    // update timers -- save productivity timer into local storage!
+
+    // update timers
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
     var m = parseInt(timeArray[0]);
@@ -273,8 +259,8 @@ function checkTimeDigit(time) {
 
   // start cycle of checking for inactivity
   if(timer != null){
-	checkPage = setInterval(offPage, 1000); 
-  }
+   checkPage = setInterval(offPage, 1000); 
+ }
 
 
     //------- HELP POP-UPS -------//
@@ -324,7 +310,7 @@ function checkTimeDigit(time) {
       console.log (soundscape);
       soundEffect(soundscape);
     }
-	function playSavedAlarm(){
+    function playSavedAlarm(){
       var alarmSound = localStorage.getItem("alarm");
       console.log (alarmSound);
       soundEffect(alarmSound);
@@ -345,11 +331,11 @@ function checkTimeDigit(time) {
       }
 	  // Save the soundscape or alarm selection
 	  if(num >= 1 && num <= 4){
-		localStorage.setItem("soundscape", num);
-	  }
-	  else{
-		localStorage.setItem("alarm", num);
-	  }
+      localStorage.setItem("soundscape", num);
+    }
+    else{
+      localStorage.setItem("alarm", num);
+    }
       //play the song is clicked
       if (num == 1) {
         console.log("hi");
@@ -387,9 +373,9 @@ function checkTimeDigit(time) {
       
       //show which song is selected
       var div1 = document.getElementById("div1");
-	  if(div1 != null){
-		div1.innerHTML = "You selected "+num;
-	  }
+      if(div1 != null){
+        div1.innerHTML = "You selected "+num;
+      }
     }
 
 
@@ -403,8 +389,8 @@ $(function(){
      $('#scroll1').scrollLeft($('#scroll1').scrollLeft() + (currentX - event.pageX));
      currentY = event.pageY;
      currentX = event.pageX;
-    }
-  });
+   }
+ });
   
   $('#scroll1').mousedown(function(event){
     isDown = true;
@@ -429,8 +415,8 @@ $(function(){
      currentY = event.pageY;
      currentX = event.pageX;
 
-    }
-  });
+   }
+ });
   
   $('#scroll2').mousedown(function(event){
     isDown = true;
@@ -442,3 +428,14 @@ $(function(){
     isDown = false;
   });
 })
+
+$('.scape').click( function() {
+  $('.scape').removeClass( "active" );
+  $( this ).addClass( "active" );
+});
+
+$('.alarm').click( function() {
+  $('.alarm').removeClass( "active" );
+  $( this ).addClass( "active" );
+});
+

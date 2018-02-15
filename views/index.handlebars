@@ -5,60 +5,66 @@
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="/css/styles.css">
-		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
 			<center>
-				<div class="jumbotron">
-					<h1>SoundTrack</h1>
+				<div class="row mt-5">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><h1>SoundTrack</h1></div>
+					<div class="col-sm-4"><button type="button" class="btn btn-outline-info" onclick="helpStart()">?</button></div>
 				</div>
-
-				<button type="button" onclick="helpStart()">?</button>
 
 				<br><br>
 				<h4>Soundscape</h4>
 
 				<div class="soundscroll squares" id="scroll1">
-				{{#each soundscapes}} 
-				<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
-				{{/each}}
+					{{#each soundscapes}} 
+					<button class="btn btn-outline-secondary scape" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+					{{/each}}
 				</div>
 
 				<br><br>
 				<h4>Alert Sound</h4>
 				<div class="soundscroll squares" id="scroll2">
-				{{#each alerts}} 
-				<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
-				{{/each}}
+					{{#each alerts}} 
+					<button class="btn btn-outline-secondary alarm" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+					{{/each}}
 				</div>
 
 				<br><br>
 				<div id="div1">No sound effect selected yet...</div>
 
 				<br><br>
-				<!-- Downtime slider 
-				<output id="downtime" for="downtimeRange">20</output><br><br>
-				<div class="slidecontainer">
-					<input type="range" min="1" max="40" value="20" class="slider" id="downtimeRange" oninput="downtime.value = downtimeRange.value">
-				</div> <br><br>-->
 
-				<p class="downtime-text">Allowed Downtime: <span id="downtime">20</span> minutes</p>
+				<h4 class="downtime-text">Allowed Downtime: <span id="downtime">20</span> minutes</h4>
 				<br>
 				<div class="slidecontainer">
 					<input type="range" min="1" max="40" value="20" class="slider" id="downtimeRange" oninput="updateTimeRange(this.value)">
 				</div>
 				<br><br>
 				<!-- Start working -->
-				<div class="button" id="start">
-					<a href="screen2" class="thumbnail">
-						<p>Start Working!</p>
-					</a>
-				</div>
+				<a href="screen2" class="btn btn-outline-primary" role="button" aria-pressed="true">Start Working!</a>
 			</center>
-		</div>
 
+
+
+		</div>
+		<footer>
+			<div class="row">
+				<div class="col-sm-12">
+					© 2018 Copyright: Soundsters
+				</div>
+			</div>
+		</footer>
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/script.js"></script>

@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<title>SoundTrack</title>
+<head>
+	<title>SoundTrack</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  </head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+</head>
 
-  <body>
-  	<body onload="playSavedSoundscape()">
-  	<div class="container">
-  		<center>
-		<div class="jumbotron">
-			<h1>SoundTrack</h1>
-				<button type="button" onclick="helpListen()">?</button>
-		</div>
+<body>
+	<body onload="playSavedSoundscape()">
+		<div class="container">
+			<center>
+				<div class="row mt-5">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><h1>SoundTrack</h1></div>
+					<div class="col-sm-4"><button type="button" class="btn btn-outline-info" onclick="helpListen()">?</button></div>
+				</div>
 
-	
 
-<!-- <div class="button" id="back">
-			<a href="/" class="thumbnail">
-				<p>Back</p>
-			</a>
-		</div>
-<h4>Productivity Tracker</h4>
-{{#each productivity}}
-<div>Productive for: <span id="productiveTime">{{minutes}}:{{seconds}}</span></div>
-{{/each}}
-<br>
-{{#each downtime}}
-<div>Downtime left: <span id="timer">{{minutes}}:{{seconds}}</span></div>
-{{/each}} -->
+				<div id="productivityTracker" class="row mt-5">
+					<h4 class="col-12">Productivity Tracker</h4>
+					<div class="productivity col-6"><b>Productive for: </b><span id="productiveTime">00:00</span></div>
+					<div class="offtask col-6"><b>Downtime left: </b><span id="timer"></span></div>
+				</div>
 
-<div id="productivityTracker" class="row">
-<h4 class="col-12">Productivity Tracker</h4>
-<div class="productivity col-6">Productive for: <span id="productiveTime">00:00</span></div>
-<div class="offtask col-6">Downtime left: <span id="timer"></span></div>
-</div>
+				<br><br>
+				<h4>Soundscape</h4>
 
-		<br><br>
-		<h4>Soundscape</h4>
+				<div class="soundscroll squares" id="scroll1">
+					{{#each soundscapes}} 
+					<button class="btn btn-outline-secondary scape" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
+					{{/each}}
+				</div>
 
-      	<div class="soundscroll squares" id="scroll1">
-		{{#each soundscapes}} 
-		<button class="button" onclick="soundEffect({{soundEffectnum}})" id="{{id}}">{{name}}</button>
-		{{/each}}
-		</div>
-		
-	<br><br>
-		<div type="button" class="button btn btn-primary" id="edit">
-			<a href="alertsettings" class="thumbnail">
-				<p>Alert Settings</p>
-			</a>
-		</div>
-      	
-		
-    	</center>
+				<br><br>
+				<a href="alertsettings" class="btn btn-outline-primary" role="button" aria-pressed="true">Alert Settings</a>
+
+			</div>
+
+
+		</center>
 	</div>
 
+	<footer>
+		<div class="row">
+			<div class="col-sm-12">
+				© 2018 Copyright: Soundsters
+			</div>
+		</div>
+	</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-<script src="/js/script.js"></script>
-  </body>
+	<script src="/js/script.js"></script>
+</body>
 </html>
