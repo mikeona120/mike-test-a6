@@ -86,6 +86,12 @@ h1 {
     cursor: pointer;
 }
 
+@media screen and (max-width: 500px) {
+   .soundscroll{ 
+    overflow-x:auto;
+  }
+}
+
 .soundscroll{
   display:block;
   top:0;
@@ -97,7 +103,6 @@ h1 {
   overflow-x:hidden;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  line-width: 15px;
 }
 .soundscroll > button{
   display:inline-block;
