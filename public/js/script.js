@@ -105,10 +105,6 @@ function checkDowntime() {
   }
 }*/
 
-var timerCountdown;
-var pTimerCountdown;
-  sessionStorage.setItem("downtimeVal", 20);
-  sessionStorage.setItem("downtimeValSecs", "00");
 
 function startTimer() { // Jackie's countdown
 var presentTime = document.getElementById('timer').innerHTML;
@@ -290,10 +286,10 @@ function checkTimeDigit(time) {
     var forestMorning = new Audio();
     var burningLogs = new Audio();
     var whiteNoise = new Audio();
-    fallingRain.src = "../sounds/fallingRain.m4a";
-    forestMorning.src = "../sounds/forestMorning.m4a";
-    burningLogs.src = "../sounds/burningLogs.m4a";
-    whiteNoise.src = "../sounds/whiteNoise.m4a" ;
+    fallingRain.src = "../sounds/fallingRain.mp3";
+    forestMorning.src = "../sounds/forestMorning.mp3";
+    burningLogs.src = "../sounds/burningLogs.mp3";
+    whiteNoise.src = "../sounds/whiteNoise.mp3" ;
 
     //alert sound
     var foghorn = new Audio();
